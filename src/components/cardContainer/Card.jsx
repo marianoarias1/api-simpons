@@ -1,38 +1,33 @@
-import React, { useEffect, useState } from 'react'
-import { CardIMG, CardIMGContainer, CardStyled, CardStyledBack, CharacterName, DescContainer, ItemDesc } from './CardStyles'
-import axios from 'axios'
+import React, { useEffect, useRef, useState } from 'react'
+import { useAxios } from '../hooks/useAxios'
+import { CardIMG, CardIMGContainer, CardStyled, CardStyledBack, CharacterName, DescContainer, InputContainer, ItemDesc, NoSelectedCharacter, NoSelectedCharacterContainer, SearchCharacter, SubmitSearch } from './CardStyles'
 
-const URL='https://thesimpsonsquoteapi.glitch.me/quotes?character=homer'
+
 
 export const Card = () => {
-  const [data, setData]=useState(null)
+  const [character, setCharacter]=useState('')
 
-  const getCharacter= async ()=>{
-    const {data}= await axios.get(URL, { crossDomain: true })
+  const characterSelected= useRef()
 
-    const object = data.reduce((acc, item) => {
-      acc[item.character] = item
-      return acc
-    }, {})
-    
-    console.log(object)
-    setData({
-      character: object?.character,
-      image:object?.image,
-      quote: object?.quote,
-    })
-
-  };
-
-  useEffect(()=>{
-    getCharacter()
-  },[])
-
-  console.log(data)
+  const handle=()=>{
+    const character= characterSelected.current.value
+    console.log(character)
+    characterSelected.current.value=''
+    return setCharacter(character)
+  }
+  const {data}=useAxios(character)
   
   return (
     <CardStyledBack>
-    <CardStyled>
+      <InputContainer>
+        <SearchCharacter placeholder='Who are you looking for?' ref={characterSelected}></SearchCharacter>
+          <SubmitSearch type='submit' onClick={handle}>Search</SubmitSearch>
+      </InputContainer>
+
+      {
+        data ?
+        
+        <CardStyled>
         <CardIMGContainer>
             <CardIMG src={data?.image}/>
         </CardIMGContainer>
@@ -40,7 +35,15 @@ export const Card = () => {
                 <CharacterName>{data?.character}</CharacterName>
                 <ItemDesc>{data?.quote}</ItemDesc>
           </DescContainer>
-    </CardStyled>
+      </CardStyled>
+      :
+      <CardStyled>
+        <NoSelectedCharacterContainer>
+          <NoSelectedCharacter>Write a Character, please</NoSelectedCharacter>
+        </NoSelectedCharacterContainer>
+      </CardStyled>
+      }
+
     </CardStyledBack>
   )
 }
