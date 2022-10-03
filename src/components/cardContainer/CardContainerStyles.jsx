@@ -8,4 +8,5 @@ export const CardContainerStyles=styled.div`
     justify-content: center;
     align-items: center;
     position: absolute;
+    overflow: hidden;
 `

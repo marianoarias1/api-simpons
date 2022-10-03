@@ -16,6 +16,13 @@ export const CardStyledBack=styled.div`
         width: 30rem;
         height: 25rem;
     }
+
+    @media (max-width: 339px) and (min-width: 320px) {
+        width: 20rem;
+        height:30rem;
+    }
+
+
 `
 
 export const InputContainer=styled.div`
@@ -66,6 +73,15 @@ export const CardStyled=styled.div`
     @media (min-width: 389px) {
         width: 23rem;
         height:30rem;
+    }
+
+    @media (max-width: 339px) and (min-width: 320px) {
+        width: 18rem;
+        height:26rem;
+    }
+    @media (min-width: 340px) {
+        width: 20rem;
+        height:26rem;
     }
 `
 
