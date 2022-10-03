@@ -17,8 +17,8 @@ export const CardStyledBack=styled.div`
         height: 30rem;
     }
 
-    @media (max-width: 339px) and (min-width: 320px) {
-        width: 20rem;
+    @media (max-width: 380px) {
+        width: 23rem;
         height:30rem;
     }
 
@@ -70,13 +70,8 @@ export const CardStyled=styled.div`
         height: 24rem;
     }
 
-    @media (min-width: 330px) and (max-width: 389px) {
-        width: 23rem;
-        height:30rem;
-    }
-
-    @media (max-width: 339px) and (min-width: 320px) {
-        width: 18rem;
+    @media (max-width: 380px) and (min-width: 320px) {
+        width: 20rem;
         height:26rem;
     }
 
