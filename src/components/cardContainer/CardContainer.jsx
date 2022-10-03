@@ -6,7 +6,6 @@ export const CardContainer = () => {
   return (
     <CardContainerStyles>
         <Card>
-
         </Card>
     </CardContainerStyles>
   )

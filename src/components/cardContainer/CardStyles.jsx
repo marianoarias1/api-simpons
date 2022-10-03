@@ -11,6 +11,11 @@ export const CardStyledBack=styled.div`
     flex-direction: column;
     backdrop-filter: blur(4px);
     box-shadow: 0px 0px 40px 8px rgba(0,0,0,0.75);
+
+    @media (max-width: 320px) {
+        width: 30rem;
+        height: 25rem;
+    }
 `
 
 export const InputContainer=styled.div`
@@ -53,6 +58,15 @@ export const CardStyled=styled.div`
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    @media (max-width: 320px) {
+        width: 17rem;
+        height: 20rem;
+    }
+
+    @media (min-width: 389px) {
+        width: 23rem;
+        height:30rem;
+    }
 `
 
 export const NoSelectedCharacterContainer=styled.div`
@@ -82,6 +96,11 @@ export const CardIMG=styled.img`
     object-fit: contain;
     width: 17rem;
     height: 17rem;
+
+    @media (max-width: 320px) {
+        width: 11rem;
+        height: 11rem;
+    }
 `
 
 export const DescContainer=styled.div`

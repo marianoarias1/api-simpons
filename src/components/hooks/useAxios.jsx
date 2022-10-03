@@ -12,12 +12,7 @@ import { useEffect, useState } from "react";
             }else{
                 let URL=`https://thesimpsonsquoteapi.glitch.me/quotes?character=${character}`
                 console.log(URL)
-                const {data}= await axios.get(
-                    URL
-                    , 
-                    { crossDomain: true }
-                    )
-        
+                const {data}= await axios.get(URL, { crossDomain: true })
                 setData(...data)
             }
 

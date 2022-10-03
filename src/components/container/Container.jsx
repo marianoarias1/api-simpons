@@ -2,6 +2,7 @@ import React from 'react'
 import { CardContainer } from '../cardContainer/CardContainer'
 import { ContainerStyled, Image } from './ContainerStyels'
 
+
 export const Container = () => {
   return (
     <ContainerStyled>
