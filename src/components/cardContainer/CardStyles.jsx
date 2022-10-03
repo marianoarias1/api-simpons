@@ -13,8 +13,8 @@ export const CardStyledBack=styled.div`
     box-shadow: 0px 0px 40px 8px rgba(0,0,0,0.75);
 
     @media (max-width: 320px) {
-        width: 30rem;
-        height: 25rem;
+        width: 25rem;
+        height: 30rem;
     }
 
     @media (max-width: 339px) and (min-width: 320px) {
@@ -66,11 +66,11 @@ export const CardStyled=styled.div`
     display: flex;
     flex-direction: column;
     @media (max-width: 320px) {
-        width: 17rem;
-        height: 20rem;
+        width: 18rem;
+        height: 24rem;
     }
 
-    @media (min-width: 389px) {
+    @media (min-width: 330px) and (max-width: 389px) {
         width: 23rem;
         height:30rem;
     }
@@ -79,10 +79,7 @@ export const CardStyled=styled.div`
         width: 18rem;
         height:26rem;
     }
-    @media (min-width: 340px) {
-        width: 20rem;
-        height:26rem;
-    }
+
 `
 
 export const NoSelectedCharacterContainer=styled.div`
